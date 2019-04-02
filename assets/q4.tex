@@ -1,0 +1,32 @@
+% \begin{figure}
+    % \begin{tcolorbox}[width=\textwidth, colback = algonquin1!30]
+        \centering
+\begin{tikzpicture}[scale = .7, every node/.style = {scale=1}]
+  \begin{axis}[
+    xbar,
+    xmin = 0,
+    y = 35pt,
+    bar width= 2em,
+    % y axis line style = { opacity = 0 },
+    axis x line       = none,
+    axis y line       = left,
+    tickwidth         = 0pt,
+    symbolic y coords = {Unequal contribution to work, Different expectations, Conflicts with other students, Communication issues},
+    nodes near coords,
+    enlarge y limits=0.25,
+    y axis line style = {-, algonquin},
+    tick label style = {font=\sffamily},
+  ] 
+  \addplot[black, fill=algonquin] coordinates { (45,Unequal contribution to work)
+                         (55,Different expectations)
+                         (40,Conflicts with other students)
+                         (50,Communication issues)
+                      };
+  \end{axis}
+\end{tikzpicture}
+
+{What would be your main concern if you are assigned to a random group?}
+        % \caption{Summary of survey results for Question 4.}
+        % \label{fig:survey2}
+    % \end{tcolorbox}
+% \end{figure}

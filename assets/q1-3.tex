@@ -1,0 +1,123 @@
+\hspace*{-3em}
+\def\angle{110}
+\def\radius{2.5}
+\def\shiftX{0}
+\def\shiftY{2}
+% \def\shiftB{4}
+% \def\shiftC{10}
+\def\cyclelist{{"algonquin","algonquin2","algonquin3","algonquin4"}}
+\newcount\cyclecount \cyclecount=-1
+\newcount\ind \ind=-1
+\begin{tikzpicture}[nodes = {font=\sffamily}, scale=.75, every node/.style={scale=0.75}]
+\begin{scope}[shift={(\shiftX,\shiftY)}]
+  \foreach \percent/\name in {
+      50/Student,
+      40/No pref.,
+      10/Instructor,
+    } {
+      \ifx\percent\empty\else               % If \percent is empty, do nothing
+        \global\advance\cyclecount by 1     % Advance cyclecount
+        \global\advance\ind by 1            % Advance list index
+        \ifnum3<\cyclecount                 % If cyclecount is larger than list
+          \global\cyclecount=0              %   reset cyclecount and
+          \global\ind=0                     %   reset list index
+        \fi
+        \pgfmathparse{\cyclelist[\the\ind]} % Get color from cycle list
+        \edef\color{\pgfmathresult}         %   and store as \color
+        % Draw angle and set labels
+        \draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
+          arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
+        \ifnum10<\percent
+        \node[align=center] at (\angle+0.5*\percent*3.6:0.5*\radius) {\percent\,\%\\(\name)};
+        \else
+        \node[align=center] at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
+        \node[pin=90:\name]
+          at (\angle+0.5*\percent*3.6:\radius) {};
+         \fi
+        \pgfmathparse{\angle+\percent*3.6}  % Advance angle
+        \xdef\angle{\pgfmathresult}         %   and store in \angle
+      \fi
+    };
+        \draw[draw=algonquin] (0,0) circle (\radius);
+        \node[align=center, text width = 5cm] at (0,-4) {What do you prefer when forming a group};
+\end{scope}
+
+\begin{scope}[shift={(\shiftX + 5.5,\shiftY)}]
+\def\angle{135}
+\def\radius{2.5}
+\def\cyclelist{{"algonquin","algonquin2","algonquin3","algonquin4"}}
+\newcount\cyclecount \cyclecount=-1
+\newcount\ind \ind=-1
+% \begin{tikzpicture}[nodes = {font=\sffamily}, scale=.75, every node/.style={scale=0.75}]
+  \foreach \percent/\name in {
+    55/Abilities,
+    25/Personality,
+    15/Friendship,
+    5/Convenience,
+    } {
+      \ifx\percent\empty\else               % If \percent is empty, do nothing
+        \global\advance\cyclecount by 1     % Advance cyclecount
+        \global\advance\ind by 1            % Advance list index
+        \ifnum4<\cyclecount                 % If cyclecount is larger than list
+          \global\cyclecount=0              %   reset cyclecount and
+          \global\ind=0                     %   reset list index
+        \fi
+        \pgfmathparse{\cyclelist[\the\ind]} % Get color from cycle list
+        \edef\color{\pgfmathresult}         %   and store as \color
+        % Draw angle and set labels
+        \draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
+          arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
+        \ifnum24<\percent
+        \node[align=center] at (\angle+0.5*\percent*3.6:0.55*\radius) {\percent\,\%\\(\name)};
+        \else
+        \node[align=center] at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
+        \node[pin=\angle+0.5*\percent*3.6:\name]
+          at (\angle+0.5*\percent*3.6:\radius) {};
+         \fi
+        \pgfmathparse{\angle+\percent*3.6}  % Advance angle
+        \xdef\angle{\pgfmathresult}         %   and store in \angle
+      \fi
+    };
+    \draw[draw=algonquin] (0,0) circle (\radius);
+    \node[align=center, text width = 5cm] at (0,-4) {Most important factor you consider when forming a group};
+\end{scope}
+
+\begin{scope}[shift={(\shiftX + 5.5*2,\shiftY)}]
+\def\angle{100}
+\def\radius{2.5}
+% \def\cyclelist{{"algonquin","algonquin2","algonquin3","algonquin4"}}
+\newcount\cyclecount \cyclecount=-1
+\newcount\ind \ind=-1
+% \begin{tikzpicture}[nodes = {font=\sffamily}, scale=.75, every node/.style={scale=0.75}]
+  \foreach \percent/\name in {
+      60/Somewhat\\stressful,
+      35/Not\\stressful,
+      5/Very\\stressful,
+    } {
+      \ifx\percent\empty\else               % If \percent is empty, do nothing
+        \global\advance\cyclecount by 1     % Advance cyclecount
+        \global\advance\ind by 1            % Advance list index
+        \ifnum3<\cyclecount                 % If cyclecount is larger than list
+          \global\cyclecount=0              %   reset cyclecount and
+          \global\ind=0                     %   reset list index
+        \fi
+        \pgfmathparse{\cyclelist[\the\ind]} % Get color from cycle list
+        \edef\color{\pgfmathresult}         %   and store as \color
+        % Draw angle and set labels
+        \draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
+          arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
+        \ifnum25<\percent
+        \node[align=center] at (\angle+0.5*\percent*3.6:0.5*\radius) {\percent\,\%\\(\name)};
+        \else
+        \node[align=center] at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
+        \node[pin={[align=center]\angle+0.5*\percent*3.6:\name}]
+          at (\angle+0.5*\percent*3.6:\radius) {};
+         \fi
+        \pgfmathparse{\angle+\percent*3.6}  % Advance angle
+        \xdef\angle{\pgfmathresult}         %   and store in \angle
+      \fi
+    };
+    \draw[draw=algonquin] (0,0) circle (\radius);
+    \node[align=center, text width = 5cm] at (0,-4) {How stressful do you feel if you are assigned to a random group};
+\end{scope}
+\end{tikzpicture}
