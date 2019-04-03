@@ -28,7 +28,7 @@
         \draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
           arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
         \ifnum10<\percent
-        \node[align=center] at (\angle+0.5*\percent*3.6:0.5*\radius) {\percent\,\%\\(\name)};
+        \node[align=center] at (\angle+0.5*\percent*3.6:0.5*\radius) {\percent\,\%\\\name};
         \else
         \node[align=center] at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
         \node[pin=90:\name]
@@ -42,7 +42,7 @@
         \node[align=center, text width = 5cm] at (0,-4) {What do you prefer when forming a group};
 \end{scope}
 
-\begin{scope}[shift={(\shiftX + 5.5,\shiftY)}]
+\begin{scope}[shift={(\shiftX + 7.5,\shiftY)}]
 \def\angle{135}
 \def\radius{2.5}
 \def\cyclelist{{"algonquin","algonquin2","algonquin3","algonquin4"}}
@@ -68,7 +68,7 @@
         \draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
           arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
         \ifnum24<\percent
-        \node[align=center] at (\angle+0.5*\percent*3.6:0.55*\radius) {\percent\,\%\\(\name)};
+        \node[align=center] at (\angle+0.5*\percent*3.6:0.55*\radius) {\percent\,\%\\\name};
         \else
         \node[align=center] at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
         \node[pin=\angle+0.5*\percent*3.6:\name]
@@ -82,7 +82,7 @@
     \node[align=center, text width = 5cm] at (0,-4) {Most important factor you consider when forming a group};
 \end{scope}
 
-\begin{scope}[shift={(\shiftX + 5.5*2,\shiftY)}]
+\begin{scope}[shift={(\shiftX + 7.5*2,\shiftY)}]
 \def\angle{100}
 \def\radius{2.5}
 % \def\cyclelist{{"algonquin","algonquin2","algonquin3","algonquin4"}}
@@ -107,7 +107,7 @@
         \draw[fill={\color!50},draw={\color}] (0,0) -- (\angle:\radius)
           arc (\angle:\angle+\percent*3.6:\radius) -- cycle;
         \ifnum25<\percent
-        \node[align=center] at (\angle+0.5*\percent*3.6:0.5*\radius) {\percent\,\%\\(\name)};
+        \node[align=center] at (\angle+0.5*\percent*3.6:0.5*\radius) {\percent\,\%\\\name};
         \else
         \node[align=center] at (\angle+0.5*\percent*3.6:0.7*\radius) {\percent\,\%};
         \node[pin={[align=center]\angle+0.5*\percent*3.6:\name}]
